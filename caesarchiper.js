@@ -20,4 +20,4 @@ const caesarCipher = (str, num) => {
     }
     return newString;
 };
-console.log(caesarCipher('apa', 2));
+console.log(caesarCipher('aya', 4));

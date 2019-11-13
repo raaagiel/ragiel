@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gambar</title>
+
+    <style>
+        div {
+            border: 2px solid black;
+            height: auto;
+            width: 300px;
+            padding: 10px;
+            text-align: left;
+            background-color: coral;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <h1>Drawing Tools</h1>
+        <div>
+            <!-- <center> -->
+            1. Diamond
+            <br> <br>
+            2. Segitiga siku rata kiri
+            <br> <br>
+            3. Segitiga siku rata kanan
+            <br><br>
+            4. Persegi
+            <br><br>
+            5. Piramida
+            <br><br>
+            Jenis Bangunan: <br><br>
+            <input id="pilih" type="number" placeholder="masukkan pilihan anda"><br><br>
+            Ukuran : <br><br>
+            <input id="size" type="number" placeholder="masukkan ukurannya"><br><br><br>
+            <button onclick="bintang()">Submit</button>
+            <br><br>
+            <p></p>
+            <center>
+                <p></p>
+            </center>
+            <!-- </center> -->
+        </div>
+    </center>
+
+</body>
+<script>
+
+    const bintang = () => {
+        var pilihan = document.getElementById('pilih').value
+        var ukuran = document.getElementById('size').value
+        if (pilihan == 1) {
+            output = ''
+            for (i = 0; i < ukuran; i++) {
+                for (j = (ukuran - 1); j > i; j--) {
+                    output += '  '
+                }
+                for (j = 0; j <= i; j++) {
+                    output += '*'
+                }
+                for (j = 1; j <= i; j++) {
+                    output += '*'
+                }
+                output += '<br>'
+            }
+            for (i = 0; i < (ukuran - 1); i++) {
+                for (j = 0; j < (i + 1); j++) {
+                    output += '  '
+                }
+                for (j = (ukuran - 1); j > i; j--) {
+                    output += '*'
+                }
+                for (j = (ukuran - 2); j > i; j--) {
+                    output += '*'
+                }
+                output += '<br>'
+            }
+            document.getElementsByTagName('p')[1].innerHTML = output
+            document.getElementsByTagName('p')[0].innerHTML = ''
+        }
+        else if (pilihan == 2) {
+            let output = ''
+            for (i = 0; i < ukuran; i++) {
+                for (j = 0; j <= i; j++) {
+                    output += '*'
+                }
+                output += '<br>'
+            }
+            document.getElementsByTagName('p')[0].innerHTML = output
+            document.getElementsByTagName('p')[1].innerHTML = ''
+
+        } else if (pilihan == 3) {
+            var output = '';
+            for (var i = 0; i < ukuran; i++) {
+                for (var x = ukuran; x > i; x--) {
+                    output += "&nbsp;&nbsp;&nbsp;";
+                }
+                for (x = 0; x <= i; x++) {
+                    output += "* "
+                }
+                output += '<br>'
+            }
+            document.getElementsByTagName('p')[0].innerHTML = output;
+            document.getElementsByTagName('p')[1].innerHTML = ' '
+        }
+        else if (pilihan == 4) {
+            var output = '';
+            for (var i = 0; i < ukuran; i++) {
+                for (j = 0; j < ukuran; j++) {
+                    output += '*';
+                }
+                output += '<br>'
+            }
+            document.getElementsByTagName('p')[1].innerHTML = output;
+            document.getElementsByTagName('p')[0].innerHTML = ''
+        }
+        else if (pilihan == 5) {
+            output = ''
+            for (i = 0; i < ukuran; i++) {
+                for (j = (ukuran - 1); j > i; j--) {
+                    output += '  '
+                }
+                for (j = 0; j <= i; j++) {
+                    output += '*'
+                }
+                for (j = 1; j <= i; j++) {
+                    output += '*'
+                }
+                output += '<br>'
+            }
+            document.getElementsByTagName('p')[1].innerHTML = output;
+            document.getElementsByTagName('p')[0].innerHTML = ''
+        }
+        else {
+            alert('masukan pilihan yang tersedia')
+        }
+    }
+</script>
+
+</html>
